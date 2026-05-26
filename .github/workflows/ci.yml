@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: ["main", "feature/**"]
+  pull_request:
+
+jobs:
+  python-benchmark:
+    name: Python benchmark
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python tests
+        run: make test
+      - name: Example benchmark
+        run: make benchmark
+      - name: Sample manifest check
+        run: make sample-check
+
+  macos-app:
+    name: macOS app
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Swift app
+        run: make swift-build
+      - name: Run Swift core check
+        run: make swift-check
+      - name: Package unsigned development app
+        run: SWITCHTYPE_CODESIGN_IDENTITY=- make package
+      - name: Release readiness smoke check
+        run: make readiness

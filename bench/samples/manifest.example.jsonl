@@ -1,0 +1,3 @@
+{"id":"sample-001","audio":"bench/samples/audio/sample-001.wav","reference":"帮我看一下 Codex 的 PR issue 有没有过 CI","terms":["Codex","PR","issue","CI"]}
+{"id":"sample-002","audio":"bench/samples/audio/sample-002.wav","reference":"这个 MCP server 在 prelive 环境连不上 SeaTalk","terms":["MCP","prelive","SeaTalk"]}
+

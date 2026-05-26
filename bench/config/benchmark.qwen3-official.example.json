@@ -1,0 +1,17 @@
+{
+  "timeout_seconds": 180,
+  "engines": [
+    {
+      "name": "qwen3_asr_official_http",
+      "type": "command",
+      "enabled": true,
+      "command": [
+        "python3",
+        "scripts/qwen3_asr_client.py",
+        "--url",
+        "http://127.0.0.1:8765/transcribe",
+        "{audio}"
+      ]
+    }
+  ]
+}

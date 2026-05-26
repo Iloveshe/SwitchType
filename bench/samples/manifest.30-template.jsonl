@@ -1,0 +1,31 @@
+{"id":"sample-001","audio":"bench/samples/audio/sample-001.wav","reference":"帮我看一下 Codex 的 PR issue 有没有过 CI","terms":["Codex","PR","issue","CI"]}
+{"id":"sample-002","audio":"bench/samples/audio/sample-002.wav","reference":"这个 MCP server 在 prelive 环境连不上 SeaTalk","terms":["MCP","prelive","SeaTalk"]}
+{"id":"sample-003","audio":"bench/samples/audio/sample-003.wav","reference":"把这个 branch rebase 到 main 然后再跑一次 smoke test","terms":["branch","rebase","main","smoke test"]}
+{"id":"sample-004","audio":"bench/samples/audio/sample-004.wav","reference":"这个 Go service 的 p99 latency 在压测里变高了","terms":["Go","service","p99","latency"]}
+{"id":"sample-005","audio":"bench/samples/audio/sample-005.wav","reference":"帮我生成一个 Codex prompt 让它修这个 flaky test","terms":["Codex","prompt","flaky test"]}
+{"id":"sample-006","audio":"bench/samples/audio/sample-006.wav","reference":"这个 API 在 staging 可以但是 prelive 返回五百","terms":["API","staging","prelive"]}
+{"id":"sample-007","audio":"bench/samples/audio/sample-007.wav","reference":"检查一下 GitHub Actions 的 CI log 有没有权限错误","terms":["GitHub Actions","CI","log"]}
+{"id":"sample-008","audio":"bench/samples/audio/sample-008.wav","reference":"SeaTalk bot 的 webhook 需要重新部署到 dev 环境","terms":["SeaTalk","bot","webhook","dev"]}
+{"id":"sample-009","audio":"bench/samples/audio/sample-009.wav","reference":"这个 MCP tool 的 schema 少了一个 required field","terms":["MCP","tool","schema","required field"]}
+{"id":"sample-010","audio":"bench/samples/audio/sample-010.wav","reference":"帮我 review 这个 PR 里有没有 nil pointer 的风险","terms":["review","PR","nil pointer"]}
+{"id":"sample-011","audio":"bench/samples/audio/sample-011.wav","reference":"我想把 benchmark report 直接放进 README","terms":["benchmark report","README"]}
+{"id":"sample-012","audio":"bench/samples/audio/sample-012.wav","reference":"这个 SwiftUI menu bar app 需要 Accessibility permission","terms":["SwiftUI","menu bar app","Accessibility permission"]}
+{"id":"sample-013","audio":"bench/samples/audio/sample-013.wav","reference":"录音结束之后调用 whisper.cpp 然后自动 paste","terms":["whisper.cpp","paste"]}
+{"id":"sample-014","audio":"bench/samples/audio/sample-014.wav","reference":"这个 hotword config 里面要保护 Codex 和 MCP","terms":["hotword config","Codex","MCP"]}
+{"id":"sample-015","audio":"bench/samples/audio/sample-015.wav","reference":"把 SenseVoiceSmall 作为对照模型跑一遍","terms":["SenseVoiceSmall"]}
+{"id":"sample-016","audio":"bench/samples/audio/sample-016.wav","reference":"这个 transcript 的英文 token spacing 有问题","terms":["transcript","token spacing"]}
+{"id":"sample-017","audio":"bench/samples/audio/sample-017.wav","reference":"先不要做完整输入法 先做全局快捷键","terms":["全局快捷键"]}
+{"id":"sample-018","audio":"bench/samples/audio/sample-018.wav","reference":"这个 app 要 local-first 不要上传音频","terms":["app","local-first"]}
+{"id":"sample-019","audio":"bench/samples/audio/sample-019.wav","reference":"帮我把 demo GIF 的步骤写到 release checklist","terms":["demo GIF","release checklist"]}
+{"id":"sample-020","audio":"bench/samples/audio/sample-020.wav","reference":"这个 Python runner 要支持 command engine 和 fake engine","terms":["Python","runner","command engine","fake engine"]}
+{"id":"sample-021","audio":"bench/samples/audio/sample-021.wav","reference":"看一下 character error rate 和 word error rate 哪个更稳定","terms":["character error rate","word error rate"]}
+{"id":"sample-022","audio":"bench/samples/audio/sample-022.wav","reference":"把模型路径放到环境变量 SWITCHTYPE_WHISPER_MODEL","terms":["SWITCHTYPE_WHISPER_MODEL"]}
+{"id":"sample-023","audio":"bench/samples/audio/sample-023.wav","reference":"这个 clipboard 会被覆盖 先在文档里说明","terms":["clipboard"]}
+{"id":"sample-024","audio":"bench/samples/audio/sample-024.wav","reference":"把 sample manifest 里的 reference 改成我真实会说的话","terms":["sample manifest","reference"]}
+{"id":"sample-025","audio":"bench/samples/audio/sample-025.wav","reference":"这个 subprocess timeout 先设成一百二十秒","terms":["subprocess","timeout"]}
+{"id":"sample-026","audio":"bench/samples/audio/sample-026.wav","reference":"后面可以加 Core ML 但 v0.1 不做","terms":["Core ML","v0.1"]}
+{"id":"sample-027","audio":"bench/samples/audio/sample-027.wav","reference":"这个 app 先不要做复杂 settings window","terms":["app","settings window"]}
+{"id":"sample-028","audio":"bench/samples/audio/sample-028.wav","reference":"把真实 benchmark 结果更新到 docs 目录","terms":["benchmark","docs"]}
+{"id":"sample-029","audio":"bench/samples/audio/sample-029.wav","reference":"如果 whisper.cpp 不准就重点测 SenseVoice","terms":["whisper.cpp","SenseVoice"]}
+{"id":"sample-030","audio":"bench/samples/audio/sample-030.wav","reference":"最后把安装步骤和 known limitations 写清楚","terms":["known limitations"]}
+

@@ -1,0 +1,42 @@
+{
+  "protected_terms": [
+    "Codex",
+    "MCP",
+    "MCP server",
+    "SeaTalk",
+    "prelive",
+    "Go",
+    "Go service",
+    "p99",
+    "latency",
+    "PR",
+    "issue",
+    "CI",
+    "branch",
+    "rebase",
+    "main",
+    "smoke test",
+    "prompt",
+    "flaky test"
+  ],
+  "replacements": {
+    "扣德克斯": "Codex",
+    "皮阿尔": "PR",
+    "马克皮": "MCP",
+    "勾语言": "Go",
+    "codeexp": "Codex",
+    "Code S Promote": "Codex prompt",
+    "口袋pro": "Codex prompt",
+    "FLAG test": "flaky test",
+    "fl test": "flaky test",
+    "MCPso": "MCP server",
+    "p one name": "prelive",
+    "say talk": "SeaTalk",
+    "Ctalk": "SeaTalk",
+    "branchre倒": "branch rebase 到",
+    "branchre": "branch rebase",
+    "一次smoke": "一次 smoke test",
+    "公serv": "Go service",
+    "P99来腾": "p99 latency"
+  }
+}

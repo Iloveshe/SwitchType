@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">SwitchType demo storyboard</title>
+  <desc id="desc">A three step storyboard showing hold to record, local transcription, and paste output.</desc>
+  <rect width="1200" height="630" fill="#f6f7f9"/>
+  <text x="72" y="90" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="42" font-weight="700" fill="#17202a">SwitchType</text>
+  <text x="72" y="132" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="20" fill="#4d5b6a">Local-first macOS voice typing for bilingual developer workflows</text>
+
+  <g transform="translate(72 190)">
+    <rect width="310" height="290" rx="8" fill="#ffffff" stroke="#d8dee7"/>
+    <circle cx="155" cy="92" r="42" fill="#1d7afc"/>
+    <rect x="144" y="58" width="22" height="68" rx="11" fill="#ffffff"/>
+    <path d="M122 102c0 35 66 35 66 0" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+    <text x="28" y="178" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="24" font-weight="700" fill="#17202a">1. Hold Option + Space</text>
+    <text x="28" y="218" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="17" fill="#4d5b6a">Speak a Chinese-English</text>
+    <text x="28" y="244" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="17" fill="#4d5b6a">technical sentence.</text>
+  </g>
+
+  <g transform="translate(445 190)">
+    <rect width="310" height="290" rx="8" fill="#ffffff" stroke="#d8dee7"/>
+    <rect x="45" y="60" width="220" height="54" rx="8" fill="#eef5ff" stroke="#b7d4ff"/>
+    <text x="67" y="94" font-family="SFMono-Regular,Menlo,monospace" font-size="18" fill="#174ea6">whisper.cpp</text>
+    <path d="M80 148h150M80 178h120M80 208h170" stroke="#1d7afc" stroke-width="12" stroke-linecap="round"/>
+    <text x="28" y="248" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="24" font-weight="700" fill="#17202a">2. Transcribe locally</text>
+  </g>
+
+  <g transform="translate(818 190)">
+    <rect width="310" height="290" rx="8" fill="#ffffff" stroke="#d8dee7"/>
+    <rect x="36" y="54" width="238" height="122" rx="8" fill="#f8fafc" stroke="#d8dee7"/>
+    <text x="56" y="92" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" fill="#17202a">帮我看一下 Codex 的</text>
+    <text x="56" y="124" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" fill="#17202a">PR issue 有没有过 CI</text>
+    <rect x="56" y="206" width="190" height="36" rx="6" fill="#eaf7ee"/>
+    <text x="72" y="230" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="16" fill="#1b6b38">hotwords protected</text>
+    <text x="28" y="278" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="24" font-weight="700" fill="#17202a">3. Paste into cursor</text>
+  </g>
+</svg>
+

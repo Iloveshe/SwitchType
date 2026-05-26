@@ -1,0 +1,45 @@
+{
+  "timeout_seconds": 120,
+  "engines": [
+    {
+      "name": "fake",
+      "type": "fake",
+      "enabled": true,
+      "transcript": "帮我看一下扣德克斯的皮阿尔 issue 有没有过 CI"
+    },
+    {
+      "name": "whisper_cpp",
+      "type": "command",
+      "enabled": false,
+      "model": "third_party/whisper.cpp/models/ggml-large-v3-turbo.bin",
+      "command": [
+        "./third_party/whisper.cpp/build/bin/whisper-cli",
+        "-m",
+        "{model}",
+        "-f",
+        "{audio}",
+        "-l",
+        "auto",
+        "-otxt",
+        "-of",
+        "{output_without_suffix}"
+      ]
+    },
+    {
+      "name": "sensevoice_funasr",
+      "type": "command",
+      "enabled": false,
+      "model": "iic/SenseVoiceSmall",
+      "command": [
+        "python3",
+        "bench/scripts/run_sensevoice.py",
+        "--model",
+        "{model}",
+        "--audio",
+        "{audio}",
+        "--output",
+        "{output}"
+      ]
+    }
+  ]
+}
