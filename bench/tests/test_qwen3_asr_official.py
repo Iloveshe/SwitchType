@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 from scripts.create_qwen3_asr_http_config import write_config
 from scripts.qwen3_asr_client import extract_transcript
-from scripts.qwen3_asr_server import Qwen3ASRRuntime, parse_transcription_result
+from scripts.qwen3_asr_server import Qwen3ASRRuntime, parse_transcription_result, read_multipart_audio
 
 
 class ResultObject:
@@ -97,6 +97,26 @@ class Qwen3ASROfficialTests(unittest.TestCase):
             runtime.warm_up()
 
         load.assert_called_once()
+
+    def test_read_multipart_audio_is_python_314_compatible(self):
+        boundary = "SwitchTypeTestBoundary"
+        body = (
+            f"--{boundary}\r\n"
+            'Content-Disposition: form-data; name="audio"; filename="sample.wav"\r\n'
+            "Content-Type: audio/wav\r\n"
+            "\r\n"
+        ).encode("utf-8") + b"audio-bytes" + f"\r\n--{boundary}--\r\n".encode("utf-8")
+
+        data = read_multipart_audio(
+            body=body,
+            content_type=f"multipart/form-data; boundary={boundary}",
+            audio_field="audio",
+        )
+
+        self.assertEqual(data, b"audio-bytes")
+        source = Path("scripts/qwen3_asr_server.py").read_text(encoding="utf-8")
+        self.assertNotIn("import cgi", source)
+        self.assertNotIn("FieldStorage", source)
 
     def test_client_extracts_text_from_http_json_response(self):
         self.assertEqual(extract_transcript(json.dumps({"text": " 你好 Qwen3 "})), "你好 Qwen3")

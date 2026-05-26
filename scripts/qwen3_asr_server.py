@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import argparse
-import cgi
 import json
 import tempfile
 import threading
 import time
+from email import policy
+from email.parser import BytesParser
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
@@ -75,6 +76,27 @@ def parse_transcription_result(result: Any) -> dict[str, str]:
     if language:
         payload["language"] = language
     return payload
+
+
+def read_multipart_audio(*, body: bytes, content_type: str, audio_field: str) -> bytes:
+    message = BytesParser(policy=policy.default).parsebytes(
+        f"Content-Type: {content_type}\r\nMIME-Version: 1.0\r\n\r\n".encode("utf-8") + body
+    )
+    if not message.is_multipart():
+        raise RuntimeError(f"Missing multipart audio field: {audio_field}")
+
+    for part in message.iter_parts():
+        if part.get_content_disposition() != "form-data":
+            continue
+        field_name = part.get_param("name", header="content-disposition")
+        if field_name != audio_field:
+            continue
+        data = part.get_payload(decode=True) or b""
+        if not data:
+            raise RuntimeError("Uploaded audio field is empty.")
+        return data
+
+    raise RuntimeError(f"Missing multipart audio field: {audio_field}")
 
 
 class Qwen3ASRRuntime:
@@ -230,22 +252,18 @@ class Qwen3ASRRequestHandler(BaseHTTPRequestHandler):
             self._write_json({"error": str(exc)}, status=500)
 
     def _read_audio_upload(self) -> bytes:
-        form = cgi.FieldStorage(
-            fp=self.rfile,
-            headers=self.headers,
-            environ={
-                "REQUEST_METHOD": "POST",
-                "CONTENT_TYPE": self.headers.get("Content-Type", ""),
-                "CONTENT_LENGTH": self.headers.get("Content-Length", "0"),
-            },
-        )
-        field = form[self.audio_field] if self.audio_field in form else None
-        if field is None or not getattr(field, "file", None):
+        try:
+            content_length = int(self.headers.get("Content-Length", "0") or "0")
+        except ValueError as exc:
+            raise RuntimeError("Invalid Content-Length header.") from exc
+        if content_length <= 0:
             raise RuntimeError(f"Missing multipart audio field: {self.audio_field}")
-        data = field.file.read()
-        if not data:
-            raise RuntimeError("Uploaded audio field is empty.")
-        return data
+        body = self.rfile.read(content_length)
+        return read_multipart_audio(
+            body=body,
+            content_type=self.headers.get("Content-Type", ""),
+            audio_field=self.audio_field,
+        )
 
     def _write_json(
         self,
